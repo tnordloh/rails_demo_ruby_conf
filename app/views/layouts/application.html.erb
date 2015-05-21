@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id='banner'>
+    Ruby Conf 2015 submissions
+  </div>
+  <div id='columns'> 
+    <div id='side'>
+      <ul>
+        <%= link_to 'home page', about_description_path %>
+      </ul>
+      <ul>
+        <%= link_to 'edit tracks', tracks_path %>
+      </ul>
+    </div>
+    <div id='main'>
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
 
 </body>
 </html>
