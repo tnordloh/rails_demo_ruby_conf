@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521210750) do
+ActiveRecord::Schema.define(version: 20150523024545) do
+
+  create_table "talks", force: true do |t|
+    t.string   "title"
+    t.string   "name"
+    t.string   "email"
+    t.text     "abstract"
+    t.text     "notes"
+    t.text     "bio"
+    t.integer  "track_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "talks", ["track_id"], name: "index_talks_on_track_id"
 
   create_table "tracks", force: true do |t|
     t.string   "title"

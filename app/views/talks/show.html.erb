@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @talk.title %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @talk.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @talk.email %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @talk.abstract %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @talk.notes %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @talk.bio %>
+</p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @talk.track %>
+</p>
+
+<%= link_to 'Edit', edit_talk_path(@talk) %> |
+<%= link_to 'Back', talks_path %>

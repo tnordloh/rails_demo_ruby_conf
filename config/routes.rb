@@ -1,4 +1,6 @@
 Rconfsubmissions::Application.routes.draw do
+  resources :talks
+
   resources :tracks
 
   get "about/description"
