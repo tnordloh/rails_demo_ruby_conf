@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150526163814) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "access"
+    t.string   "access",     default: "submitter", null: false
   end
 
 end
