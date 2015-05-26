@@ -10,6 +10,9 @@ Rconfsubmissions::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'about#description'
 
+  get '/auth/twitter/callback' => 'sessions#create'
+  get '/signout' => 'sessions#destroy'
+ # match '/auth/github/callback' => "about#description"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
