@@ -21,11 +21,10 @@
             <li><%= link_to 'Sign in with twitter', '/auth/twitter' %></li>
           <% end %>
         <li><%= link_to 'home page', about_description_path %></li>
-        <li>
             <% if current_user && admin_user? %>
-            <%= link_to 'edit tracks', tracks_path %>
+        <li> <%= link_to 'edit tracks', tracks_path %> </li>
+        <li> <%= link_to 'view/edit talks', talks_path %> </li>
             <% end %>
-      </li>
     </ul>
     </div>
     <div id='main'>
