@@ -18,14 +18,14 @@
 
   <tbody>
     <% @talks.each do |talk| %>
-      <tr>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td><%= talk.title %></td>
         <td><%= talk.name %></td>
         <td><%= talk.email %></td>
         <td><%= talk.abstract %></td>
         <td><%= talk.notes %></td>
         <td><%= talk.bio %></td>
-        <td><%= talk.track %></td>
+        <td><%= talk.track.nil? ? "na" : Track.find_by(id: talk.track).title  %></td>
         <td><%= link_to 'Show', talk %></td>
         <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
         <td><%= link_to 'Destroy', talk, method: :delete, data: { confirm: 'Are you sure?' } %></td>

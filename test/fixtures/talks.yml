@@ -3,17 +3,17 @@
 one:
   title: MyString
   name: MyString
-  email: MyString
+  email: a@b.c
   abstract: MyText
   notes: MyText
   bio: MyText
-  track_id: 
+  track_id: 1
 
 two:
   title: MyString
   name: MyString
   email: MyString
-  abstract: MyText
+  abstract: a@b.c
   notes: MyText
   bio: MyText
-  track_id: 
+  track_id: 1
