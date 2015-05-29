@@ -32,8 +32,7 @@
 
 <p>
   <strong>Track:</strong>
-  raise @talk.track
-  <%= Track.find_by(id: @talk.track).title %>
+  <%= @talk.track.title %>
 </p>
 
 <%= link_to 'Edit', edit_talk_path(@talk) %> |
