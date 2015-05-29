@@ -1,4 +1,5 @@
 class TalksController < ApplicationController
+  skip_before_action :authorize, only: [:new, :create]
   before_action :set_talk, only: [:show, :edit, :update, :destroy]
 
   # GET /talks
@@ -28,7 +29,7 @@ class TalksController < ApplicationController
 
     respond_to do |format|
       if @talk.save
-        format.html { redirect_to @talk, notice: 'Talk was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Talk was successfully created.' }
         format.json { render action: 'show', status: :created, location: @talk }
       else
         format.html { render action: 'new' }

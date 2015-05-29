@@ -5,6 +5,15 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :admin_user?
 
+  before_action :authorize
+
+  protected
+
+  def authorize
+    unless admin_user?
+      redirect_to root_url, notice: "this page requires admin access"
+    end
+  end
   private
 
   def current_user
@@ -12,6 +21,6 @@ class ApplicationController < ActionController::Base
   end
   
   def admin_user?
-    current_user.access == 'admin'
+    !!session[:user_id] && current_user.access == 'admin'
   end
 end
