@@ -21,7 +21,7 @@ class TalksControllerTest < ActionController::TestCase
       post :create, talk: { abstract: @talk.abstract, bio: @talk.bio, email: @talk.email, name: @talk.name, notes: @talk.notes, title: @talk.title, track_id: @talk.track_id }
     end
 
-    assert_redirected_to talk_path(assigns(:talk))
+    assert_redirected_to root_url
   end
 
   test "should show talk" do

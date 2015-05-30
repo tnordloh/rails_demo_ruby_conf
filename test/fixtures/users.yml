@@ -1,11 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  provider: MyString
-  uid: MyString
-  name: MyString
+  id: 1
+  provider: test
+  uid: test
+  name: admin
+  access: admin
 
 two:
+  id: 2
   provider: MyString
   uid: MyString
   name: MyString
