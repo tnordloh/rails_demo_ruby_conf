@@ -12,6 +12,14 @@ Rconfsubmissions::Application.routes.draw do
 
   get '/auth/twitter/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
+
+  resources :talks do
+    member do
+      get :confirm_email
+    end
+  end
+
+
  # match '/auth/github/callback' => "about#description"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

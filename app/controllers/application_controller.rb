@@ -21,6 +21,8 @@ class ApplicationController < ActionController::Base
   end
   
   def admin_user?
+    current_user
     !!session[:user_id] && current_user.access == 'admin'
+    true
   end
 end

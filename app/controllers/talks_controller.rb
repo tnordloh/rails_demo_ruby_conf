@@ -29,6 +29,7 @@ class TalksController < ApplicationController
 
     respond_to do |format|
       if @talk.save
+        SubmissionNotifier.submitted(@talk).deliver
         format.html { redirect_to root_url, notice: 'Talk was successfully created.' }
         format.json { render action: 'show', status: :created, location: @talk }
       else
@@ -59,6 +60,16 @@ class TalksController < ApplicationController
     respond_to do |format|
       format.html { redirect_to talks_url }
       format.json { head :no_content }
+    end
+  end
+
+  def confirm_email
+    talk = Talk.find_by_confirm_token(params[:id])
+    if talk
+      talk.email_activate
+      redirect_to root_url, notice: 'Talk was successfully updated'
+    else
+      redirect_to root_url, notice: "Sorry.  Talk does not exist"
     end
   end
 
