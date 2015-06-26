@@ -69,7 +69,7 @@ class TalksController < ApplicationController
       talk.email_activate
       redirect_to root_url, notice: 'Talk was successfully updated'
     else
-      redirect_to root_url, notice: "Sorry.  Talk does not exist"
+      redirect_to root_url, alert: "Sorry.  Talk does not exist"
     end
   end
 

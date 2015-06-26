@@ -9,8 +9,8 @@ Rconfsubmissions::Application.configure do
     port: 587,
     domain: "mail.nordloh.com",
     authentication: "plain",
-    user_name: "railsdev@nordloh.com",
-    password: "mayonnaise_54321",
+    user_name: ENV["USER"],
+    password: ENV["PASSWORD"],
     enable_starttls_auto: true
   } 
   # Settings specified here will take precedence over those in config/application.rb.
